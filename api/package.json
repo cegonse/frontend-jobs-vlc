@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Frontend VLC jobs API",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cegonse/frontend-jobs-vlc.git"
+  },
+  "author": "Cesar Gonzalez, Jose Hernandez",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cegonse/frontend-jobs-vlc/issues"
+  },
+  "homepage": "https://github.com/cegonse/frontend-jobs-vlc#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}

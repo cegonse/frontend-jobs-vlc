@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Frontend VLC jobs app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel html/index.html",
+    "build": "parcel build html/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cegonse/frontend-jobs-vlc.git"
+  },
+  "author": "Cesar Gonzalez, Jose Hernandez",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cegonse/frontend-jobs-vlc/issues"
+  },
+  "homepage": "https://github.com/cegonse/frontend-jobs-vlc#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^26.0.1",
+    "parcel-bundler": "^1.12.4"
+  }
+}

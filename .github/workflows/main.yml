@@ -54,15 +54,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-      working-directory: e2e
-    - run: npm install
-      working-directory: app
-    - run: npm run start
-      working-directory: app
-    - run: ./node_modules/wait-on/bin/wait-on http://127.0.0.1:1234
-      working-directory: e2e
-    - run: npm test
-      working-directory: e2e
-      env:
-        CI: true
+    - run: >
+      cd app && npm install && cd ..
+      cd e2e && npm install && cd ..
+      cd app && npm run start && cd ..
+      cd e2e
+      sleep 10
+      npm test

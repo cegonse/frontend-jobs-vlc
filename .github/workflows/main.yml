@@ -56,6 +56,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
       working-directory: e2e
+    - run: npm install
+      working-directory: app
     - run: ./ci/run_e2e.sh
       env:
         CI: true

@@ -58,6 +58,11 @@ jobs:
       working-directory: e2e
     - run: npm install
       working-directory: app
-    - run: ./ci/run_e2e.sh
+    - run: npm run start
+      working-directory: app
+    - run: ./node_modules/wait-on/bin/wait-on http://127.0.0.1:1234
+      working-directory: e2e
+    - run: npm test
+      working-directory: e2e
       env:
         CI: true

@@ -9,7 +9,9 @@
   "dependencies": {
     "cypress": "^4.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "wait-on": "^5.0.0"
+  },
   "scripts": {
     "test": "cypress run --spec=./test/*.spec.js"
   },

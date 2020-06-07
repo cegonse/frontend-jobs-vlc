@@ -58,6 +58,7 @@ jobs:
         cd app && npm install && npm run build && cd .. &&
         cd e2e && npm install && cd ..  &&
         cd app && npm run start && cd .. &&
+        cd so_jobs_api_stub && npm install && npm run start && cd .. &&
         cd e2e &&
         sleep 10 &&
         npm test

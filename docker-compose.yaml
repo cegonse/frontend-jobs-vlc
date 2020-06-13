@@ -5,13 +5,23 @@ services:
       context: ./app
     ports:
       - 1234:1234
+    volumes:
+      - ./app:/opt/app
+      - /opt/app/node_modules
+      - /opt/app/dist
   api:
     build:
       context: ./api
     ports:
       - 3000:3000
+    volumes:
+      - ./api:/opt/api
+      - /opt/api/node_modules
   so_jobs_api_stub:
     build:
       context: ./so_jobs_api_stub
     ports:
       - 4000:4000
+    volumes:
+      - ./so_jobs_api_stub:/opt/so_jobs_api_stub
+      - /opt/so_jobs_api_stub/node_modules

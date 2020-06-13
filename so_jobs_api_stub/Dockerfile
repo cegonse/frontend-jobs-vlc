@@ -7,5 +7,5 @@ RUN npm config set registry "http://registry.npmjs.org"
 
 COPY . $WORKPATH
 
-RUN npm install
+RUN npm install -g
 CMD ["npm", "run", "start"]

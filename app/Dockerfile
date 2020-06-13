@@ -11,6 +11,6 @@ RUN npm config set registry "http://registry.npmjs.org"
 
 COPY --chown=$USERNAME:$USERNAME . $WORKPATH
 
-RUN npm install --no-progress
+RUN npm install
 RUN npm run build
 CMD ["npm", "run", "start"]

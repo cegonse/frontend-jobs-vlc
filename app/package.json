@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "start": "./node_modules/http-server/bin/http-server ./dist -p 1234",
+    "start": "http-server ./dist -p 1234",
     "stop": "pkill -f http-server",
     "build": "parcel build ./html/index.html"
   },

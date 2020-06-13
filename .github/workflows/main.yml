@@ -58,4 +58,4 @@ jobs:
         docker-compose up --build -d &&
         docker-compose logs &&
         docker ps &&
-        cd e2e && npm install && sleep 10 && npm test
+        cd e2e && npm install && npm test

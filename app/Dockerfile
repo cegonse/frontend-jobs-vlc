@@ -15,5 +15,4 @@ RUN npm install --no-progress
 COPY --chown=$USERNAME:$USERNAME . $WORKPATH
 
 RUN npm run build
-RUN ls -lah dist
 CMD ["npm", "run", "start"]

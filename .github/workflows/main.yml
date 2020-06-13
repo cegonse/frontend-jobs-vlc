@@ -56,4 +56,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: >
         docker-compose up --build -d &&
-        cd e2e && npm test
+        cd e2e && npm install && npm test

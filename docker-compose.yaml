@@ -1,8 +1,7 @@
 version: '3.4'
 services:
   app:
-    build:
-      context: ./app
+    build: ./app
     ports:
       - 1234:1234
     volumes:
@@ -10,16 +9,14 @@ services:
       - /opt/app/node_modules
       - /opt/app/dist
   api:
-    build:
-      context: ./api
+    build: ./api
     ports:
       - 3000:3000
     volumes:
       - ./api:/opt/api
       - /opt/api/node_modules
   so_jobs_api_stub:
-    build:
-      context: ./so_jobs_api_stub
+    build: ./so_jobs_api_stub
     ports:
       - 4000:4000
     volumes:

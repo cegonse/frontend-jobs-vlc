@@ -5,4 +5,4 @@ api.get('/jobs', (req, res) => {
     res.json([])
 })
 
-api.listen(3000, () => {})
+api.listen(process.env.PORT || 3000, () => {})

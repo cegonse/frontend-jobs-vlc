@@ -55,10 +55,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: >
-        cd app && npm install && npm run build && cd .. &&
-        cd e2e && npm install && cd ..  &&
-        cd app && npm run start && cd .. &&
-        cd so_jobs_api_stub && npm install && npm run start && cd .. &&
-        cd e2e &&
-        sleep 10 &&
-        npm test
+        docker-compose up --build -d &&
+        docker-compose logs &&
+        docker ps &&
+        cd e2e && npm install && npm test

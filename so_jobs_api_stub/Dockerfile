@@ -5,7 +5,9 @@ WORKDIR $WORKPATH
 
 RUN npm config set registry "http://registry.npmjs.org"
 
+COPY package* $WORKPATH
+RUN npm install
+
 COPY . $WORKPATH
 
-RUN npm install
 CMD ["npm", "run", "start"]

@@ -41,6 +41,25 @@ jobs:
       working-directory: app
       env:
         CI: true
+  so_jobs_api_stub_tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+      working-directory: so_jobs_api_stub
+    - run: npm test
+      working-directory: so_jobs_api_stub
+      env:
+        CI: true
   e2e_tests:
     runs-on: ubuntu-latest
 

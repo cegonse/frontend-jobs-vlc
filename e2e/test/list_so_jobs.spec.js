@@ -15,7 +15,7 @@ describe('Listing stack overflow job offers', () => {
         thenNoJobsAvailableMessageIsDisplayed()
     })
 
-    it('shows one job when one job is available at SO', () => {
+    xit('shows one job when one job is available at SO', () => {
         givenStackOverflowListsOneJob()
 
         whenVisitingHomepage()

@@ -1,7 +1,7 @@
 require('isomorphic-fetch')
 const xmlParser = require('fast-xml-parser')
 
-const STACK_OVERFLOW_RSS_FEED_URL = 'https://stackoverflow.com/jobs/feed?l=valencia&q=frontend'
+const STACK_OVERFLOW_RSS_FEED_URL = 'https://stackoverflow.com/jobs/feed?l=valencia'
 
 
 class StackOverflowClient {

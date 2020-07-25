@@ -9,9 +9,11 @@ let stack_overflow_client = new so_client.StackOverflowClient()
 api.get('/jobs', (req, res) => {
     stack_overflow_client.jobs(
         (jobs) => {
+            console.log('JSON StackOverflow Jobs: \n' + JSON.stringify(jobs) + '\n')
             res.json(jobs)
         },
         (cause) => {
+            console.log('StackOverflow Jobs request failed: ' + cause)
             res.setHeader('X-FrontendVlcJobs-FailureCause', JSON.stringify({
                 culprit: 'stackoverflow_jobs',
                 cause: cause

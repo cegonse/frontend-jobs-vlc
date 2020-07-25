@@ -5,9 +5,14 @@ const STACK_OVERFLOW_RSS_FEED_URL = 'https://stackoverflow.com/jobs/feed?q=front
 
 
 class StackOverflowClient {
-    jobs(callback) {
+    jobs(callback, failure) {
         fetch(STACK_OVERFLOW_RSS_FEED_URL)
         .then((response) => {
+            if (response.status != 200) {
+                failure(response.statusText)
+                return
+            }
+
             response.text()
             .then((text) => {
                 this.parseXml(text, callback)

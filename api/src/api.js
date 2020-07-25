@@ -7,9 +7,18 @@ let stack_overflow_client = new so_client.StackOverflowClient()
 
 
 api.get('/jobs', (req, res) => {
-    stack_overflow_client.jobs((jobs) => {
-        res.json(jobs)
-    })
+    stack_overflow_client.jobs(
+        (jobs) => {
+            res.json(jobs)
+        },
+        (cause) => {
+            res.setHeader('X-FrontendVlcJobs-FailureCause', JSON.stringify({
+                culprit: 'stackoverflow_jobs',
+                cause: cause
+            }))
+            res.json([])
+        }
+    )
 })
 
 api.setStackOverflowClient = (client) => {

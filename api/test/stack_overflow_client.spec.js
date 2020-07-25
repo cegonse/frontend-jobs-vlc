@@ -6,6 +6,20 @@ describe('StackOverflow API Client', () => {
     afterEach(() => {
         fetchMock.restore()
     })
+
+    it('calls failure callback when failing to fetch content from StackOverflow', (done) => {
+        const stack_overflow_client = new StackOverflowClient()
+
+        fetchMock.mock('https://stackoverflow.com/jobs/feed?q=frontend&l=valencia&u=Km&d=20', {
+            body: 'Internal server error',
+            status: 500
+        })
+
+        stack_overflow_client.jobs(null, (error) => {
+            expect(error).toEqual('Internal Server Error')
+            done()
+        })
+    })
     
     it('requests RSS feed to StackOverflow and parses zero jobs', (done) => {
         const stack_overflow_client = new StackOverflowClient()

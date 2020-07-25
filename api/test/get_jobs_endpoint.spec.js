@@ -11,6 +11,22 @@ describe('GET /jobs endpoint', () => {
         api.setStackOverflowClient(stack_overflow_client)
     })
 
+    it('reports zero jobs and extended cause in headers when request to Stack Overflow fails', (done) => {
+        stack_overflow_client.givenRequestFailsWith('Internal Server Error')
+
+        request(api)
+            .get('/jobs')
+            .set('Accept', 'application/json')
+            .then((res) => {
+                expect(res.header['x-frontendvlcjobs-failurecause']).toEqual(JSON.stringify({
+                    culprit: 'stackoverflow_jobs',
+                    cause: 'Internal Server Error'
+                }))
+                expect(res.body).toEqual([])
+                done()
+            })
+    })
+
     it('reports zero jobs when Stack Overflow has zero open listings', (done) => {
         const expected_jobs = []
         

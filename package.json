@@ -18,9 +18,18 @@
   },
   "homepage": "https://github.com/cegonse/frontend-jobs-vlc#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fast-xml-parser": "^3.17.4",
+    "fetch": "^1.1.0",
+    "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
-    "jest": "^26.0.1"
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@types/fetch-mock": "^7.3.2",
+    "babel-jest": "^26.1.0",
+    "fetch-mock": "^9.10.3",
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2"
   }
 }

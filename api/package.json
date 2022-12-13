@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/cegonse/frontend-jobs-vlc#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fast-xml-parser": "^3.17.4",
     "fetch": "^1.1.0",
     "isomorphic-fetch": "^2.2.1"
